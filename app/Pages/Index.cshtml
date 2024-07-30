@@ -8,6 +8,13 @@
     <h1 class="display-4">Welcome</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
+    <form method="post" class="w-50 mx-auto mb-4">
+        <div class="input-group">
+            <input type="text" name="NewItem" class="form-control" placeholder="Enter new item" required />
+            <button class="btn btn-primary" type="submit">Add Item</button>
+        </div>
+    </form>
+
     <table class="table w-50 mx-auto">
         <thead>
             <tr>
@@ -21,7 +28,7 @@
                 foreach (var item in Model.Items) {
                     <tr>
                         <th scope="row">@index</th>
-                        <td class="text-start flex-fill">@item</td>
+                        <td class="text-start flex-fill">@item.Name <div class="text-secondary fs-6">@item.EncryptedData</div></td>
                     </tr>
                     index++;
                 }
